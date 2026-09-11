@@ -1,0 +1,91 @@
+2025/11/06 02:12:51 Setting 'xpack.monitoring.enabled' from environment.
+
+Using bundled JDK: /usr/share/logstash/jdk
+
+Sending Logstash logs to /usr/share/logstash/logs which is now configured via log4j2.properties
+
+[2025-11-06T02:13:15,121][WARN ][deprecation.logstash.settings] The setting `http.host` is a deprecated alias for `api.http.host` and will be removed in a future release of Logstash. Please use api.http.host instead
+
+[2025-11-06T02:13:15,161][INFO ][logstash.runner          ] Log4j configuration path used is: /usr/share/logstash/config/log4j2.properties
+
+[2025-11-06T02:13:15,162][INFO ][logstash.runner          ] Starting Logstash {"logstash.version"=>"8.15.0", "jruby.version"=>"jruby 9.4.8.0 (3.1.4) 2024-07-02 4d41e55a67 OpenJDK 64-Bit Server VM 21.0.4+7-LTS on 21.0.4+7-LTS +indy +jit [x86_64-linux]"}
+
+[2025-11-06T02:13:15,163][INFO ][logstash.runner          ] JVM bootstrap flags: [-Xms1g, -Xmx1g, -Djava.awt.headless=true, -Dfile.encoding=UTF-8, -Djruby.compile.invokedynamic=true, -XX:+HeapDumpOnOutOfMemoryError, -Djava.security.egd=file:/dev/urandom, -Dlog4j2.isThreadContextMapInheritable=true, -Dlogstash.jackson.stream-read-constraints.max-string-length=200000000, -Dlogstash.jackson.stream-read-constraints.max-number-length=10000, -Dls.cgroup.cpuacct.path.override=/, -Dls.cgroup.cpu.path.override=/, -Djruby.regexp.interruptible=true, -Djdk.io.File.enableADS=true, --add-exports=jdk.compiler/com.sun.tools.javac.api=ALL-UNNAMED, --add-exports=jdk.compiler/com.sun.tools.javac.file=ALL-UNNAMED, --add-exports=jdk.compiler/com.sun.tools.javac.parser=ALL-UNNAMED, --add-exports=jdk.compiler/com.sun.tools.javac.tree=ALL-UNNAMED, --add-exports=jdk.compiler/com.sun.tools.javac.util=ALL-UNNAMED, --add-opens=java.base/java.security=ALL-UNNAMED, --add-opens=java.base/java.io=ALL-UNNAMED, --add-opens=java.base/java.nio.channels=ALL-UNNAMED, --add-opens=java.base/sun.nio.ch=ALL-UNNAMED, --add-opens=java.management/sun.management=ALL-UNNAMED, -Dio.netty.allocator.maxOrder=11]
+
+[2025-11-06T02:13:15,166][INFO ][logstash.runner          ] Jackson default value override `logstash.jackson.stream-read-constraints.max-string-length` configured to `200000000`
+
+[2025-11-06T02:13:15,166][INFO ][logstash.runner          ] Jackson default value override `logstash.jackson.stream-read-constraints.max-number-length` configured to `10000`
+
+[2025-11-06T02:13:15,181][INFO ][logstash.settings        ] Creating directory {:setting=>"path.queue", :path=>"/usr/share/logstash/data/queue"}
+
+[2025-11-06T02:13:15,182][INFO ][logstash.settings        ] Creating directory {:setting=>"path.dead_letter_queue", :path=>"/usr/share/logstash/data/dead_letter_queue"}
+
+[2025-11-06T02:13:15,602][INFO ][logstash.agent           ] No persistent UUID file found. Generating new UUID {:uuid=>"dff3d2a5-680a-4e8f-a23a-5a6b30fead84", :path=>"/usr/share/logstash/data/uuid"}
+
+[2025-11-06T02:13:16,332][INFO ][logstash.agent           ] Successfully started Logstash API endpoint {:port=>9600, :ssl_enabled=>false}
+
+[2025-11-06T02:13:18,166][INFO ][org.reflections.Reflections] Reflections took 173 ms to scan 1 urls, producing 138 keys and 481 values
+
+[2025-11-06T02:13:18,882][WARN ][logstash.outputs.elasticsearch] You are using a deprecated config setting "ssl" set in elasticsearch. Deprecated settings will continue to work, but are scheduled for removal from logstash in the future. Set 'ssl_enabled' instead. If you have any questions about this, please visit the #logstash channel on freenode irc. {:name=>"ssl", :plugin=><LogStash::Outputs::ElasticSearch index=>"springboot-logs-%{+YYYY.MM.dd}", password=><password>, id=>"749ec8f30f8edf9122211a0786dbc2257c6a9a488a132c967fe66ca1afe7b64e", user=>"logstash_system", ssl=>false, hosts=>[http://elasticsearch:9200], enable_metric=>true, codec=><LogStash::Codecs::Plain id=>"plain_6cbd46e4-7e87-49b7-91b7-4adbd8548513", enable_metric=>true, charset=>"UTF-8">, workers=>1, ssl_certificate_verification=>true, ssl_verification_mode=>"full", sniffing=>false, sniffing_delay=>5, timeout=>60, pool_max=>1000, pool_max_per_route=>100, resurrect_delay=>5, validate_after_inactivity=>10000, http_compression=>true, compression_level=>1, retry_initial_interval=>2, retry_max_interval=>64, dlq_on_failed_indexname_interpolation=>true, data_stream_type=>"logs", data_stream_dataset=>"generic", data_stream_namespace=>"default", data_stream_sync_fields=>true, data_stream_auto_routing=>true, manage_template=>true, template_overwrite=>false, template_api=>"auto", doc_as_upsert=>false, script_type=>"inline", script_lang=>"painless", script_var_name=>"event", scripted_upsert=>false, retry_on_conflict=>1, ilm_enabled=>"auto", ilm_pattern=>"{now/d}-000001", ilm_policy=>"logstash-policy">}
+
+[2025-11-06T02:13:18,905][INFO ][logstash.javapipeline    ] Pipeline `main` is configured with `pipeline.ecs_compatibility: v8` setting. All plugins in this pipeline will default to `ecs_compatibility => v8` unless explicitly configured otherwise.
+
+[2025-11-06T02:13:18,945][INFO ][logstash.outputs.elasticsearch][main] New Elasticsearch output {:class=>"LogStash::Outputs::ElasticSearch", :hosts=>["http://elasticsearch:9200"]}
+
+[2025-11-06T02:13:19,065][INFO ][logstash.outputs.elasticsearch][main] Elasticsearch pool URLs updated {:changes=>{:removed=>[], :added=>[http://logstash_system:xxxxxx@elasticsearch:9200/]}}
+
+[2025-11-06T02:13:19,125][INFO ][logstash.outputs.elasticsearch][main] Failed to perform request {:message=>"Connect to elasticsearch:9200 [elasticsearch/10.0.9.2] failed: Connection refused", :exception=>Manticore::SocketException, :cause=>#<Java::OrgApacheHttpConn::HttpHostConnectException: Connect to elasticsearch:9200 [elasticsearch/10.0.9.2] failed: Connection refused>}
+
+[2025-11-06T02:13:19,126][WARN ][logstash.outputs.elasticsearch][main] Attempted to resurrect connection to dead ES instance, but got an error {:url=>"http://logstash_system:xxxxxx@elasticsearch:9200/", :exception=>LogStash::Outputs::ElasticSearch::HttpClient::Pool::HostUnreachableError, :message=>"Elasticsearch Unreachable: [http://elasticsearch:9200/][Manticore::SocketException] Connect to elasticsearch:9200 [elasticsearch/10.0.9.2] failed: Connection refused"}
+
+[2025-11-06T02:13:19,138][INFO ][logstash.outputs.elasticsearch][main] Not eligible for data streams because config contains one or more settings that are not compatible with data streams: {"index"=>"springboot-logs-%{+YYYY.MM.dd}"}
+
+[2025-11-06T02:13:19,139][INFO ][logstash.outputs.elasticsearch][main] Data streams auto configuration (`data_stream => auto` or unset) resolved to `false`
+
+[2025-11-06T02:13:19,144][WARN ][logstash.filters.grok    ][main] ECS v8 support is a preview of the unreleased ECS v8, and uses the v1 patterns. When Version 8 of the Elastic Common Schema becomes available, this plugin will need to be updated
+
+[2025-11-06T02:13:19,263][WARN ][logstash.filters.grok    ][main] ECS v8 support is a preview of the unreleased ECS v8, and uses the v1 patterns. When Version 8 of the Elastic Common Schema becomes available, this plugin will need to be updated
+
+[2025-11-06T02:13:19,333][WARN ][logstash.filters.grok    ][main] ECS v8 support is a preview of the unreleased ECS v8, and uses the v1 patterns. When Version 8 of the Elastic Common Schema becomes available, this plugin will need to be updated
+
+[2025-11-06T02:13:19,394][WARN ][logstash.filters.grok    ][main] ECS v8 support is a preview of the unreleased ECS v8, and uses the v1 patterns. When Version 8 of the Elastic Common Schema becomes available, this plugin will need to be updated
+
+[2025-11-06T02:13:19,596][WARN ][logstash.filters.grok    ][main] ECS v8 support is a preview of the unreleased ECS v8, and uses the v1 patterns. When Version 8 of the Elastic Common Schema becomes available, this plugin will need to be updated
+
+[2025-11-06T02:13:19,674][WARN ][logstash.filters.grok    ][main] ECS v8 support is a preview of the unreleased ECS v8, and uses the v1 patterns. When Version 8 of the Elastic Common Schema becomes available, this plugin will need to be updated
+
+[2025-11-06T02:13:19,723][INFO ][logstash.javapipeline    ][main] Starting pipeline {:pipeline_id=>"main", "pipeline.workers"=>4, "pipeline.batch.size"=>125, "pipeline.batch.delay"=>50, "pipeline.max_inflight"=>500, "pipeline.sources"=>["/usr/share/logstash/pipeline/logstash.conf"], :thread=>"#<Thread:0x15ec6e35 /usr/share/logstash/logstash-core/lib/logstash/java_pipeline.rb:134 run>"}
+
+[2025-11-06T02:13:21,693][INFO ][logstash.javapipeline    ][main] Pipeline Java execution initialization time {"seconds"=>1.97}
+
+[2025-11-06T02:13:21,718][INFO ][logstash.inputs.beats    ][main] Starting input listener {:address=>"0.0.0.0:5044"}
+
+[2025-11-06T02:13:21,730][INFO ][logstash.javapipeline    ][main] Pipeline started {"pipeline.id"=>"main"}
+
+[2025-11-06T02:13:21,752][INFO ][logstash.agent           ] Pipelines running {:count=>1, :running_pipelines=>[:main], :non_running_pipelines=>[]}
+
+[2025-11-06T02:13:21,816][INFO ][org.logstash.beats.Server][main][25b6e0cf0ff0baf5c96f6ea8c6d02c0112d9f80bc5c9ce157167b55cf5a931f9] Starting server on port: 5044
+
+[2025-11-06T02:13:24,147][INFO ][logstash.outputs.elasticsearch][main] Failed to perform request {:message=>"Connect to elasticsearch:9200 [elasticsearch/10.0.9.2] failed: Connection refused", :exception=>Manticore::SocketException, :cause=>#<Java::OrgApacheHttpConn::HttpHostConnectException: Connect to elasticsearch:9200 [elasticsearch/10.0.9.2] failed: Connection refused>}
+
+[2025-11-06T02:13:24,164][WARN ][logstash.outputs.elasticsearch][main] Attempted to resurrect connection to dead ES instance, but got an error {:url=>"http://logstash_system:xxxxxx@elasticsearch:9200/", :exception=>LogStash::Outputs::ElasticSearch::HttpClient::Pool::HostUnreachableError, :message=>"Elasticsearch Unreachable: [http://elasticsearch:9200/][Manticore::SocketException] Connect to elasticsearch:9200 [elasticsearch/10.0.9.2] failed: Connection refused"}
+
+[2025-11-06T02:13:29,271][WARN ][logstash.outputs.elasticsearch][main] Health check failed {:code=>401, :url=>http://elasticsearch:9200/, :message=>"Got response code '401' contacting Elasticsearch at URL 'http://elasticsearch:9200/'"}
+
+[2025-11-06T02:13:29,273][WARN ][logstash.outputs.elasticsearch][main] Attempted to resurrect connection to dead ES instance, but got an error {:url=>"http://logstash_system:xxxxxx@elasticsearch:9200/", :exception=>LogStash::Outputs::ElasticSearch::HttpClient::Pool::BadResponseCodeError, :message=>"Got response code '401' contacting Elasticsearch at URL 'http://elasticsearch:9200/'"}
+
+[2025-11-06T02:13:34,409][WARN ][logstash.outputs.elasticsearch][main] Restored connection to ES instance {:url=>"http://logstash_system:xxxxxx@elasticsearch:9200/"}
+
+[2025-11-06T02:13:34,415][INFO ][logstash.outputs.elasticsearch][main] Elasticsearch version determined (8.15.0) {:es_version=>8}
+
+[2025-11-06T02:13:34,415][WARN ][logstash.outputs.elasticsearch][main] Detected a 6.x and above cluster: the `type` event field won't be used to determine the document _type {:es_version=>8}
+
+[2025-11-06T02:13:49,165][INFO ][logstash.outputs.elasticsearch][main] Using a default mapping template {:es_version=>8, :ecs_compatibility=>:v8}
+
+[2025-11-06T02:13:49,202][INFO ][logstash.outputs.elasticsearch][main] Installing Elasticsearch template {:name=>"ecs-logstash"}
+
+
+[2025-11-06T02:13:49,370][ERROR][logstash.outputs.elasticsearch][main] Failed to install template {:message=>"Got response code '403' contacting Elasticsearch at URL 'http://elasticsearch:9200/_index_template/ecs-logstash'", :exception=>LogStash::Outputs::ElasticSearch::HttpClient::Pool::BadResponseCodeError, :backtrace=>["/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/http_client/manticore_adapter.rb:84:in `perform_request'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/http_client/pool.rb:355:in `perform_request_to_url'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/http_client/pool.rb:341:in `block in perform_request'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/http_client/pool.rb:429:in `with_connection'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/http_client/pool.rb:340:in `perform_request'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/http_client/pool.rb:348:in `block in Pool'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/http_client.rb:423:in `template_put'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/http_client.rb:86:in `template_install'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/template_manager.rb:44:in `install'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch/template_manager.rb:32:in `install_template'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch.rb:663:in `install_template'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch.rb:371:in `finish_register'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/outputs/elasticsearch.rb:328:in `block in register'", "/usr/share/logstash/vendor/bundle/jruby/3.1.0/gems/logstash-output-elasticsearch-11.22.7-java/lib/logstash/plugin_mixins/elasticsearch/common.rb:172:in `block in after_successful_connection'"], :body=>"{\"error\":{\"root_cause\":[{\"type\":\"security_exception\",\"reason\":\"action [indices:admin/index_template/put] is unauthorized for user [logstash_system] with effective roles [logstash_system], this action is granted by the cluster privileges [manage_index_templates,manage,all]\"}],\"type\":\"security_exception\",\"reason\":\"action [indices:admin/index_template/put] is unauthorized for user [logstash_system] with effective roles [logstash_system], this action is granted by the cluster privileges [manage_index_templates,manage,all]\"},\"status\":403}"}
+
+[2025-11-06T02:13:49,371][ERROR][logstash.outputs.elasticsearch][main] Failed to bootstrap. Pipeline "main" is going to shut down {:message=>"Got response code '403' contacting Elasticsearch at URL 'http://elasticsearch:9200/_index_template/ecs-logstash'", :exception=>LogStash::Outputs::ElasticSearch::HttpClient::Pool::BadResponseCodeError}
+

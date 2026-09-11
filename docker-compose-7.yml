@@ -1,0 +1,57 @@
+version: '3.7'
+services:
+  elasticsearch:
+    image: docker.elastic.co/elasticsearch/elasticsearch:7.17.15
+    container_name: elasticsearch
+    environment:
+      - discovery.type=single-node
+      - ES_JAVA_OPTS=-Xms2g -Xmx2g
+      - bootstrap.memory_lock=true
+    ports:
+      - "9200:9200"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == srv22
+      resources:
+        limits:
+          memory: 4G
+        reservations:
+          memory: 2G
+    ulimits:
+      memlock:
+        soft: -1
+        hard: -1
+    
+
+  logstash:
+    image: docker.elastic.co/logstash/logstash:7.17.15
+    container_name: logstash
+    volumes:
+      - /home/pathfind/elastic-poc/logstash/pipeline:/usr/share/logstash/pipeline/
+    ports:
+      - "5044:5044" # A porta que vai receber os logs do Filebeat
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == srv22
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M
+
+  kibana:
+    image: docker.elastic.co/kibana/kibana:7.17.15
+    container_name: kibana
+    ports:
+      - "5601:5601"
+    deploy:
+      placement:
+        constraints:
+          - node.hostname == srv22
+      resources:
+        limits:
+          memory: 1G
+        reservations:
+          memory: 512M

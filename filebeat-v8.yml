@@ -1,0 +1,41 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+    - /var/lib/docker/volumes/motor-simulacao_ptfses-j17/_data/*
+  fields:
+    service: ptfses
+  fields_under_root: true
+
+- type: log
+  enabled: true
+  paths:
+    - /var/lib/docker/volumes/motor-simulacao_plnses-j17/_data/*
+  fields:
+    service: plnses
+  fields_under_root: true
+
+# ===== Elasticsearch output (COMENTADO para usar Logstash) =====
+#output.elasticsearch:
+#  hosts: ["localhost:9200"]
+#  username: "elastic"
+#  password: "ElasticPassword123!"
+
+# ===== Logstash output =====
+output.logstash:
+  hosts: ["localhost:5044"]
+
+# ===== Kibana setup =====
+setup.kibana:
+  host: "localhost:5601"
+  username: "elastic"
+  password: "ElasticPassword123!"
+
+# ===== Logging configuration =====
+logging.level: info
+logging.to_files: true
+logging.files:
+  path: /var/log/filebeat
+  name: filebeat
+  keepfiles: 5
+  permissions: 0644
